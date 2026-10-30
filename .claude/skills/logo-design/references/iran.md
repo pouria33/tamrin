@@ -168,3 +168,38 @@ Starting points (adjust for contrast and the category, see `references/color.md`
   next to it in the footer mockup.
 - **Guidelines**: include the Persian and Latin lockups, minimum sizes for the Persian wordmark (dots set the limit),
   the font licences, and Persian copy with the Jalali date.
+
+## 10. Video channels (YouTube, Aparat)
+
+Many Iranian brands and creators live on video: YouTube for the diaspora and international reach (it's filtered
+inside Iran, so domestic viewers often arrive through a VPN), and **Aparat (آپارات)** for a domestic audience. Plan for
+both when the brand publishes video.
+
+**Build the kit** from the finished symbol and a horizontal lockup:
+
+```bash
+python3 scripts/channel_kit.py brand-symbol.svg --lockup brand-fa-horizontal.svg --bg "#1C39BB" --pattern khatam --png
+```
+
+This writes the avatar (800×800, mark kept inside the circle crop), a 2560×1440 banner with the logo in the 1235×338
+area visible on every device, a guide version with the TV / desktop / safe-area outlines, and a 150×150 watermark.
+`--pattern khatam` adds a faint eight-point-star (khatam, خاتم) lattice, a quiet Iranian texture that keeps the logo
+area clear. Render and look at the guide version before delivery.
+
+- **Which lockup**: on Aparat, use the Persian lockup. On YouTube, use Latin or bilingual for an international
+  channel and Persian for a diaspora channel that speaks Persian. Keep the symbol identical on both platforms so
+  viewers recognise it.
+- **Aparat sizes**: Aparat's profile image and cover crop differently from YouTube's, and its specs change, so check
+  the current upload guidance. The avatar works as is; crop the cover from the banner master and keep the logo
+  centred.
+- **Avatar**: the channel name sits next to it in Persian or Latin, so the avatar should be the symbol only, not a
+  shrunken wordmark. Test it at 48 px and 98 px in a circle.
+- **Watermark**: it sits in the corner of every video. Use the simplest form of the mark and check it over both light
+  and dark footage.
+- **Thumbnails** (1280×720) are part of the system:
+  - Fix one Persian display face (e.g. Lalezar, or the bold weight of the brand's Persian font), one accent colour
+    and one position for the logo.
+  - Persian text reads right to left, so anchor the headline on the right and the face or subject on the left.
+  - Persian headlines need extra line height for dots and descenders. Keep them to 2–4 words, and check them at
+    phone size (about 160 px wide).
+  - Render thumbnail text with a tool that shapes Persian correctly, and look at the result.

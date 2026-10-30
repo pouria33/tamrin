@@ -14,7 +14,8 @@ Reply in the user's language. Keep the process visible but light: short explanat
 **Iranian or Persian-speaking brand?** If the brand is Iranian, targets Persian speakers, needs a Persian (Farsi)
 name or wordmark, or the user writes in Persian, read `references/iran.md` before Phase 1 and apply it throughout:
 Persian replies, both spellings of the name, at least one Persian-script concept, bilingual lockups, Iranian colour and
-cultural checks, and `svg_audit.py --girih` for five- and ten-fold geometry.
+cultural checks, `svg_audit.py --girih` for five- and ten-fold geometry, and a YouTube/Aparat channel kit if the
+brand publishes video.
 
 ## Pick the mode
 
@@ -55,6 +56,7 @@ On Windows, `python3` is often the Microsoft Store stub; use `python` (or `py -3
 | `presentation_board.py` | Client presentation (brief, each concept with rationale + 6 **industry-specific** mockups — cup, packaging, payment card, README, terminal, signage…; comparison, recommendation) from a JSON spec (`templates/presentation-spec.example.json`); `--png-dir` exports every slide as PNG; `--list-mockups` |
 | `render_png.py` | Render SVG → transparent PNG at exact sizes (for looking at your work and for deliverables); screenshots HTML sheets/boards (Chrome); builds `favicon.ico`; `--which` lists renderers |
 | `export_variants.py` | Black, white, brand-mono, square, favicon and app-icon SVGs; `--png` sizes; `--web-icons` = favicon.ico + PNG icon set + webmanifest + `<head>` snippet; `--favicon-source` for a simplified small-size drawing |
+| `channel_kit.py` | Video-channel kit (YouTube, Aparat): circle-safe avatar, 2560×1440 banner with the logo in the safe area (+ guide overlay; `--pattern khatam` for a Persian star lattice), watermark; `--png` |
 | `build_catalog.py` | Maintainers only: rebuild the library catalog |
 
 **Look at your work.** Drawing in SVG code is drawing blind. After writing or changing a logo, render it and look:
@@ -226,4 +228,4 @@ Keep it short: the image does the work. Don't attach variants, boards or icon se
 | `references/redesign.md` | Refresh vs. rebrand, equity audit, refresh techniques |
 | `references/critique.md` | Structured logo critique with scorecard and fixes |
 | `references/library-guide.md` | What's in the 1,400+ logo library, insights, curated examples by technique |
-| `references/iran.md` | Iranian brands: Persian script and lettering styles, bilingual lockups, girih and Iranian motifs, colour, cultural/legal checks, Cafe Bazaar/Myket delivery |
+| `references/iran.md` | Iranian brands: Persian script and lettering styles, bilingual lockups, girih and Iranian motifs, colour, cultural/legal checks, Cafe Bazaar/Myket delivery, YouTube/Aparat channel kit and Persian thumbnails |
