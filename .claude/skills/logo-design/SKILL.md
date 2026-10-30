@@ -1,6 +1,6 @@
 ---
 name: logo-design
-description: Professional logo and brand-mark design, from brief to production files. Guides discovery and the design brief, concept generation, choosing a mark type (wordmark, monogram, letterform, pictorial, abstract, emblem, mascot, combination), building clean geometric SVG logos, optical refinement, colour and typography, testing (16 px, one-colour, reversed, shelf test), client presentation, delivery variants and brand guidelines. Includes a searchable library of 1,400+ real-world SVG logos classified by type, technique, geometry and industry, plus scripts that audit SVGs and generate test sheets, presentation boards and export variants. Use this skill whenever the user wants a logo, logotype, wordmark, monogram, brand mark, symbol, app icon or favicon designed, redesigned, refreshed, critiqued or compared; asks for logo ideas or concepts; needs a design brief, logo guidelines, lockups or an identity system; or mentions branding a new company, product, app or project — even if they don't say the word "logo".
+description: Professional logo and brand-mark design, from brief to production files. Guides discovery and the design brief, concept generation, choosing a mark type (wordmark, monogram, letterform, pictorial, abstract, emblem, mascot, combination), building clean geometric SVG logos, optical refinement, colour and typography, testing (16 px, one-colour, reversed, shelf test), client presentation, delivery variants and brand guidelines. Includes a library of 1,400+ classified real-world SVG logos plus scripts for SVG audits, test sheets, presentation boards and export variants. Use this skill whenever the user wants a logo, logotype, wordmark, monogram, brand mark, symbol, app icon or favicon designed, redesigned, refreshed, critiqued or compared; asks for logo ideas or concepts; needs a design brief, logo guidelines, lockups or an identity system; or mentions branding a new company, product, app or project — even if they don't say the word "logo". Also covers Iranian brands and Persian (Farsi) script logos.
 ---
 
 # Logo Design
@@ -10,6 +10,11 @@ relevant mark that works at 16 px and on a building, in one colour, for decades.
 build it with craft, prove it works, and present it so it's judged on the right criteria.
 
 Reply in the user's language. Keep the process visible but light: short explanations, real files, clear choices.
+
+**Iranian or Persian-speaking brand?** If the brand is Iranian, targets Persian speakers, needs a Persian (Farsi)
+name or wordmark, or the user writes in Persian, read `references/iran.md` before Phase 1 and apply it throughout:
+Persian replies, both spellings of the name, at least one Persian-script concept, bilingual lockups, Iranian colour and
+cultural checks, and `svg_audit.py --girih` for five- and ten-fold geometry.
 
 ## Pick the mode
 
@@ -45,7 +50,7 @@ On Windows, `python3` is often the Microsoft Store stub; use `python` (or `py -3
 |---|---|
 | `concept_sheet.py` | One-image concept overview (large mark, lockup, true 64/32/16 px sizes, name, one-line idea, recommendation) — what you show at the checkpoint |
 | `search_library.py` | Find reference logos by `--type`, `--technique`, `--geometry`, `--subject`, `--industry`, `--color`, `--mood`…; `--summary` shows a category's conventions; `--format paths` gives files to read |
-| `svg_audit.py` | Check an SVG: live text, rasters, filters, colour count, gradients, strokes, near-miss angles, tiny details, centring, complexity vs. the library |
+| `svg_audit.py` | Check an SVG: live text, rasters, filters, colour count, gradients, strokes, near-miss angles, tiny details, centring, complexity vs. the library; `--girih` accepts 18°/36°/72° geometry |
 | `preview_sheet.py` | HTML test sheet: size ladder, 16/32 px pixel test, backgrounds, one-colour, squint blur, mirror/rotate, favicon/app-icon/header/card contexts, side-by-side, shelf test vs. competitors |
 | `presentation_board.py` | Client presentation (brief, each concept with rationale + 6 **industry-specific** mockups — cup, packaging, payment card, README, terminal, signage…; comparison, recommendation) from a JSON spec (`templates/presentation-spec.example.json`); `--png-dir` exports every slide as PNG; `--list-mockups` |
 | `render_png.py` | Render SVG → transparent PNG at exact sizes (for looking at your work and for deliverables); screenshots HTML sheets/boards (Chrome); builds `favicon.ico`; `--which` lists renderers |
@@ -221,3 +226,4 @@ Keep it short: the image does the work. Don't attach variants, boards or icon se
 | `references/redesign.md` | Refresh vs. rebrand, equity audit, refresh techniques |
 | `references/critique.md` | Structured logo critique with scorecard and fixes |
 | `references/library-guide.md` | What's in the 1,400+ logo library, insights, curated examples by technique |
+| `references/iran.md` | Iranian brands: Persian script and lettering styles, bilingual lockups, girih and Iranian motifs, colour, cultural/legal checks, Cafe Bazaar/Myket delivery |

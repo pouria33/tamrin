@@ -25,6 +25,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import svglib  # noqa: E402
 
 CLEAN_ANGLES = [0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180]
+# Five- and ten-fold geometry (Persian girih, stars, pentagons) lives on multiples of 18°.
+GIRIH_ANGLES = sorted(set(CLEAN_ANGLES) | set(range(0, 181, 18)))
 
 
 def load_stats():
@@ -35,7 +37,7 @@ def load_stats():
         return None
 
 
-def audit(path, bg=None):
+def audit(path, bg=None, girih=False):
     findings = []  # (level, code, message)
 
     def add(level, code, msg):
@@ -158,7 +160,7 @@ def audit(path, bg=None):
         for ang, length, a, b in geo["lines"]:
             if length < size * 0.04:
                 continue
-            closest = min(CLEAN_ANGLES, key=lambda c: abs(c - ang))
+            closest = min(GIRIH_ANGLES if girih else CLEAN_ANGLES, key=lambda c: abs(c - ang))
             dev = abs(closest - ang)
             if 0.3 < dev <= 3.0:
                 near.append((round(ang, 1), closest % 180, round(length, 1), a))
@@ -238,11 +240,13 @@ def main():
     ap.add_argument("files", nargs="+")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--bg", help="background colour to test contrast against, e.g. '#ffffff'")
+    ap.add_argument("--girih", action="store_true",
+                    help="also treat multiples of 18° (36°, 72°, 108°…) as clean, for girih/pentagonal geometry")
     a = ap.parse_args()
     results, rc = [], 0
     for p in a.files:
         try:
-            results.append(audit(p, a.bg))
+            results.append(audit(p, a.bg, a.girih))
         except Exception as exc:
             rc = 1
             results.append({"file": p, "error": str(exc)})
